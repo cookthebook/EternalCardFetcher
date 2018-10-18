@@ -5,3 +5,5 @@ package-lock.json
 .env
 yarn-error.log
 npm-debug.log
+
+run_image.sh
