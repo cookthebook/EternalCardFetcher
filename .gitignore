@@ -4,3 +4,4 @@ junit
 package-lock.json
 .env
 yarn-error.log
+npm-debug.log
