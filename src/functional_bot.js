@@ -1,10 +1,11 @@
 const Eris = require('eris')
-const { eatCookies, giveCookies } = require('./bakery')
+const { eatCookies, giveCookies, checkCookies } = require('./bakery')
 const { getEmoji, isCookCommand, getCommand } = require('./lib')
 
 const commands = {
   GIVE_COOKIES: 'give',
-  EAT_COOKIES: 'eat'
+  EAT_COOKIES: 'eat',
+  CHECK_COOKIES: 'check'
 }
 
 function createBot ({ discordBotToken, onReady, erisInstance }) {
@@ -43,6 +44,9 @@ function parseInput (msg) {
       break
     case commands.EAT_COOKIES:
       returnMsgs = eatCookies(msg)
+      break
+    case commands.CHECK_COOKIES:
+      returnMsgs = checkCookies(msg)
       break
     default:
       returnMsgs = [`Command recieved, ${getEmoji('kek', msg.channel.guild)}`]
